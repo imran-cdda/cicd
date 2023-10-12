@@ -18,20 +18,16 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.10]
+        python-version: [3.9]
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
 
-    - name: Set up Python 3.1
-      run: |
-        wget https://www.python.org/ftp/python/3.1.5/Python-3.1.5.tgz
-        tar xzf Python-3.1.5.tgz
-        cd Python-3.1.5
-        ./configure
-        make
-        sudo make install
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
 
     - name: Install Dependencies
       run: |
