@@ -28,6 +28,6 @@ jobs:
     # - name: Lint with Flake8
     #   run: |
     #     flake8 .
-    - name: Run Server
+    - name: Run Test
       run: |
-        python manage.py runserver
+        python manage.py test
