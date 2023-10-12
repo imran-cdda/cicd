@@ -25,13 +25,13 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Python 3.1
-    run: |
-      wget https://www.python.org/ftp/python/3.1.5/Python-3.1.5.tgz
-      tar xzf Python-3.1.5.tgz
-      cd Python-3.1.5
-      ./configure
-      make
-      sudo make install
+      run: |
+        wget https://www.python.org/ftp/python/3.1.5/Python-3.1.5.tgz
+        tar xzf Python-3.1.5.tgz
+        cd Python-3.1.5
+        ./configure
+        make
+        sudo make install
 
     - name: Install Dependencies
       run: |
